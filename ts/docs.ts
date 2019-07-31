@@ -19,6 +19,51 @@ import { isArticle } from './util/guards'
 docs()
 
 /**
+ * Generate an Index file containing links to all documentation.
+ * WIP: Currently just generates a JSON file containing a List of Links
+ */
+async function buildIndex(): Promise<void> {
+  const mds = await globby('schema/*.md')
+
+  const links: Node[] = []
+
+  await Promise.all(
+    mds.map(async mdFile => {
+      const article = await encoda.read(mdFile)
+
+      if (!isArticle(article) || article.title === 'Untitled') {
+        return
+      }
+
+      const nameRoot = mdFile.split('.')[0]
+
+      links.push({
+        type: 'ListItem',
+        content: [
+          {
+            type: 'Link',
+            content: [article.title],
+            target: `${nameRoot}.html`
+          }
+        ]
+      })
+    })
+  )
+
+  const list = {
+    type: 'List',
+    items: links
+  }
+
+  const outputFile = path.join('built', `DocList.json`)
+
+  await encoda.write(list, outputFile, {
+    isBundle: false, // Set isBundle to true to work locally with NPM linked Thema style changes
+    theme: 'stencila'
+  })
+}
+
+/**
  * Generate docs for each `built/*.schema.json` file and
  * convert any `schema/*.md` files to HTML.
  *
@@ -91,6 +136,8 @@ async function docs(): Promise<void> {
       return fs.copy(file, path.join('built', path.basename(file)))
     })
   )
+
+  await buildIndex()
 }
 
 /**
