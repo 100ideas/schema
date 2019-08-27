@@ -16,6 +16,9 @@ import Schema from './schema-interface'
 const SCHEMA_SOURCE_DIR = path.join(__dirname, '..', 'schema')
 const SCHEMA_DEST_DIR = path.join(__dirname, '..', 'public')
 
+const SCHEMA_SOURCE_URL = 'https://github.com/stencila/schema/blob/master/schema'
+const SCHEMA_DEST_URL = 'https://schema.stenci.la'
+
 // Create a validation function for JSON Schema for use in `checkSchema`
 const ajv = new Ajv({ jsonPointers: true })
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -60,6 +63,9 @@ export const build = async (): Promise<void> => {
 
   // Process each of the schemas
   schemata.forEach(schema => processSchema(schemas, schema))
+
+  // Generate additional schemas
+  addTypesSchemas(schemas)
 
   // Write to destination
   await fs.ensureDir('public')
@@ -193,11 +199,12 @@ const checkSchema = (
     }
   }
 
-  // Check $refs are valid
+  // Check $refs are valid, noting that `*Types.schema.json` files
+  // are generated after this check.
   const walk = (node: Schema): void => {
     if (typeof node !== 'object') return
     for (const [key, child] of Object.entries(node)) {
-      if (key === '$ref' && typeof child === 'string' && !schemas.has(child)) {
+      if (key === '$ref' && typeof child === 'string' && !child.endsWith('Types') && !schemas.has(child)) {
         error(`${title} has a $ref to unknown type "${child}"`)
       }
       walk(child)
@@ -228,10 +235,10 @@ const processSchema = (schemas: Map<string, Schema>, schema: Schema): void => {
     schema.$schema = `http://json-schema.org/draft-07/schema#`
 
   if ($id === undefined)
-    schema.$id = `https://stencila.github.com/schema/${title}.schema.json`
+    schema.$id = `${SCHEMA_DEST_URL}/${title}.schema.json`
 
   if (source === undefined)
-    schema.source = `https://github.com/stencila/schema/blob/master/schema/${file}`
+    schema.source = `${SCHEMA_SOURCE_URL}/${file}`
 
   try {
     const parent = parentSchema(schemas, schema)
@@ -378,4 +385,28 @@ const parentSchema = (
     throw new Error(`Unknown schema used in "extends": "${schema.extends}"`)
 
   return parent
+}
+
+/**
+ * Add `*Types` schemas to the map of schemas which
+ * are the union (`anyOf`) of any descendant types
+ */
+const addTypesSchemas = (
+  schemas: Map<string, Schema>
+): void => {
+  for (const [title, schema] of schemas.entries()) {
+    const { descendants } = schema
+    if (descendants !== undefined && descendants.length > 0) {
+      const typesTitle = title + 'Types'
+      schemas.set(typesTitle, {
+        $schema: "http://json-schema.org/draft-07/schema#",
+        $id: `${SCHEMA_DEST_URL}/${typesTitle}.schema.json`,
+        title: typesTitle,
+        description: `All type schemas that are derived from ${title}`,
+        anyOf: [title, ...descendants].map(descendant => ({
+          $ref: `${descendant}.schema.json`
+        }))
+      })
+    }
+  }
 }
