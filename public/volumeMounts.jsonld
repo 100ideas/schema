@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:volumeMount",
+  "@type": "schema:Property",
+  "schema:name": "volumeMounts",
+  "schema:description": "Volumes to mount in the session.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:SoftwareSession"
+    }
+  ]
+}

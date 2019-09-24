@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:cpuResource",
+  "@type": "schema:Property",
+  "schema:name": "cpuResource",
+  "schema:description": "The CPU resource for the session.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:SoftwareSession"
+    }
+  ]
+}

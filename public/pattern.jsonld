@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:pattern",
+  "@type": "schema:Property",
+  "schema:name": "pattern",
+  "schema:description": "A regular expression that a string node must match.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:StringSchema"
+    }
+  ]
+}

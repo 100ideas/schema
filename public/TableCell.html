@@ -1,0 +1,167 @@
+<html>
+
+  <head>
+    <title>TableCell</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">TableCell</h1>
+      <h2 id="status-experimental-role-secondary">Status: experimental, Role: secondary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>A cell within a `Table`. </p>
+          <h2 id="properties">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>content <em>(required)</em></strong></td>
+                <td><code>array&lt;</code>​<a
+                    href="./InlineContent.html"><code>InlineContent</code></a>​<code>&gt;</code>
+                </td>
+                <td>Contents of the table cell.</td>
+                <td><a href="./TableCell.html">TableCell</a></td>
+              </tr>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>TableCell</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>cellType</td>
+                <td><code>enum&lt;</code>​<code>data</code> | <code>header</code>​<code>&gt;</code>
+                </td>
+                <td>Indicates whether the cell is a header or data.</td>
+                <td><a href="./TableCell.html">TableCell</a></td>
+              </tr>
+              <tr>
+                <td>colspan</td>
+                <td><code>integer</code></td>
+                <td>How many columns the cell extends.</td>
+                <td><a href="./TableCell.html">TableCell</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the cell.</td>
+                <td><a href="./TableCell.html">TableCell</a></td>
+              </tr>
+              <tr>
+                <td>rowspan</td>
+                <td><code>integer</code></td>
+                <td>How many columns the cell extends.</td>
+                <td><a href="./TableCell.html">TableCell</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>A <code>TableCell</code> type represents a single cell in a <a
+          href="/schema/Table"><code>Table</code></a>. It contains properties defining the contents,
+        and optionally the dimensions of the cell within the table.</p>
+      <h1 id="examples">Examples</h1>
+      <h2 id="simple">Simple</h2>
+      <p>This is the most basic form of <code>TableCell</code> you can have, only requiring the
+        <code>content</code> field.</p>
+      <pre data-import="simple"><code class="language-json">{
+  &quot;type&quot;: &quot;TableCell&quot;,
+  &quot;content&quot;: [1]
+}</code></pre>
+      <h2 id="table-cell-with-all-properties-defined">Table Cell with all properties defined</h2>
+      <pre data-import="full"><code class="language-json">{
+  &quot;type&quot;: &quot;TableCell&quot;,
+  &quot;colspan&quot;: 2,
+  &quot;content&quot;: [1],
+  &quot;name&quot;: &quot;myCustomLabel&quot;,
+  &quot;rowspan&quot;: 1
+}</code></pre>
+      <h2 id="table-cell-with-inline-content">Table Cell with Inline Content</h2>
+      <p>The <code>contents</code> of a <code>TableCell</code> can contain values besides simple
+        primitives like strings and numbers. It can store any valid <a
+          href="/schema/InlineContent"><code>InlineContent</code></a> such as emphasized text or
+        even images.</p>
+      <pre data-import="content"><code class="language-json">{
+  &quot;type&quot;: &quot;TableCell&quot;,
+  &quot;content&quot;: [
+    {
+      &quot;type&quot;: &quot;Emphasis&quot;,
+      &quot;content&quot;: [&quot;Some emphasized content&quot;]
+    }
+  ]
+}</code></pre>
+      <h1 id="encodings">Encodings</h1>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>This section describes common encodings for this node type. These samples are generated
+            from the above examples by <a href="https://stencila.github.io/encoda">Encoda</a>, but
+            you can also author them in each format.</p>
+        </div>
+      </div>
+      <h2 id="jats">JATS</h2>
+      <p><code>TableCell</code> is analogous to the JATS <a
+          href="https://jats.nlm.nih.gov/articleauthoring/tag-library/1.2/element/td.html"><code>&lt;td&gt;</code></a>
+        type. While the JATS <code>&lt;td&gt;</code> element must be contained &quot;in the body of
+        a table, as opposed to a cell in the table header&quot;, the Stencila equivalent does not
+        impose such restrictions.</p>
+      <h2 id="mdast">mdast</h2>
+      <p><code>TableCell</code> is analogous to the mdast <a
+          href="https://github.com/syntax-tree/mdast#tablecell"><code>TableCell</code></a> node
+        type.</p>
+      <h3 id="opendocument">OpenDocument</h3>
+      <p><code>TableCell</code> is analogous to the OpenDocument <a
+          href="http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part1.html#__RefHeading__1415590_253892949"><code>&lt;table:table-cell&gt;</code></a>
+        element, which:</p>
+      <blockquote>
+        <p>can contain paragraphs and other text content as well as sub tables. Table cells may span
+          multiple columns and rows. Table cells may be empty.</p>
+      </blockquote>
+      <h2 id="examples-1">Examples</h2>
+      <h5 id="auto-included-from-quotexamplestablecelltablecellyamlquot">(auto-included from
+        &quot;examples/TableCell/*.TableCell.yaml&quot;)</h5>
+      <pre><code class="language-yaml">type: TableCell
+name: myCustomLabel
+content:
+  - 1
+colspan: 2
+rowspan: 1
+</code></pre>
+      <pre><code class="language-yaml">type: TableCell
+content:
+  - type: Emphasis
+    content:
+      - Some emphasized Content
+</code></pre>
+      <pre><code class="language-yaml">type: TableCell
+content:
+  - 1
+</code></pre>
+    </article>
+  </body>
+
+</html>

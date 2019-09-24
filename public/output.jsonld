@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:output",
+  "@type": "schema:Property",
+  "schema:name": "output",
+  "schema:description": "The value of the expression when it was last evaluated.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:CodeExpression"
+    }
+  ]
+}

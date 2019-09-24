@@ -1,0 +1,464 @@
+<html>
+
+  <head>
+    <title>Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Table</h1>
+      <h2 id="status-unstable-role-primary">Status: unstable, Role: primary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>A table.</p>
+          <h2 id="properties-6">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>rows <em>(required)</em></strong></td>
+                <td><code>array&lt;</code>​<a
+                    href="./TableRow.html"><code>TableRow</code></a>​<code>&gt;</code></td>
+                <td>Rows of cells in the table.</td>
+                <td><a href="./Table.html">Table</a></td>
+              </tr>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>Table</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>alternateNames</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Alternate names (aliases) for the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>authors</td>
+                <td><code>codec&lt;csi&gt;</code> &amp; <code>array&lt;</code>​<a
+                    href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>The authors of this creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>content</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>The structured content of this creative work c.f. property `text`.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>dateCreated</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date/time of creation.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>dateModified</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date/time of most recent modification.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>datePublished</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date of first publication.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>A description of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>editors</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Person.html"><code>Person</code></a>​<code>&gt;</code></td>
+                <td>Persons who edited the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>funders</td>
+                <td><code>array&lt;</code>​<a href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>Person or organisation that funded the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>isPartOf</td>
+                <td><a href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a></td>
+                <td>An item or other CreativeWork that this CreativeWork is a part of.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>keywords</td>
+                <td><code>codec&lt;csi&gt;</code> &amp;
+                  <code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Keywords or tags used to describe this content. Multiple entries in a keywords
+                  list are typically delimited by commas.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>licenses</td>
+                <td><code>array&lt;</code>​<code>string&lt;uri&gt;</code> | <a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>License documents that applies to this content, typically indicated by URL.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>parts</td>
+                <td><code>array&lt;</code>​<a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>Elements of the collection which can be a variety of different elements, such as
+                  Articles, Datatables, Tables and more.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>publisher</td>
+                <td><a href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a></td>
+                <td>A publisher of the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>references</td>
+                <td><code>array&lt;</code>​<code>string</code> | <a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>References to other creative works, such as another publication, web page,
+                  scholarly article, etc.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td><code>string</code></td>
+                <td>The textual content of this creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>The title of the creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td><code>string&lt;uri&gt;</code></td>
+                <td>The URL of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>version</td>
+                <td><code>string</code> | <code>number</code></td>
+                <td>The version of the creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>A <code>Table</code> type allows you to represent two-dimensional data, in a way that can
+        easily be translated into an XHTML table if needed. It is primarily a container for <a
+          href="/schema/TableRow"><code>Table Row</code></a> and <a
+          href="/schema/TableCell"><code>Table Cell</code></a> types.</p>
+      <h1 id="examples-11">Examples</h1>
+      <h2 id="simple-9">Simple</h2>
+      <p>This is the most basic form of <code>Table</code> you can have. It contains no rows or
+        columns, and represents an empty table.</p>
+      <pre data-import="simple"><code class="language-json">{
+  &quot;type&quot;: &quot;Table&quot;,
+  &quot;rows&quot;: []
+}</code></pre>
+      <h2 id="table-with-rows-amp-cells">Table with Rows &amp; Cells</h2>
+      <p>The <code>Table</code> type can contain <code>rows</code>, which in turn contain
+        <code>cells</code>.</p>
+      <pre data-import="complex"><code class="language-json">{
+  &quot;type&quot;: &quot;Table&quot;,
+  &quot;rows&quot;: [
+    {
+      &quot;type&quot;: &quot;TableRow&quot;,
+      &quot;cells&quot;: [
+        {
+          &quot;type&quot;: &quot;TableCell&quot;,
+          &quot;content&quot;: [&quot;one&quot;]
+        },
+        {
+          &quot;type&quot;: &quot;TableCell&quot;,
+          &quot;content&quot;: [&quot;two&quot;]
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;TableRow&quot;,
+      &quot;cells&quot;: [
+        {
+          &quot;type&quot;: &quot;TableCell&quot;,
+          &quot;content&quot;: [&quot;three&quot;]
+        },
+        {
+          &quot;type&quot;: &quot;TableCell&quot;,
+          &quot;content&quot;: [&quot;four&quot;]
+        }
+      ]
+    }
+  ]
+}</code></pre>
+      <h1 id="encodings-5">Encodings</h1>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>This section describes common encodings for this node type. These samples are generated
+            from the above examples by <a href="https://stencila.github.io/encoda">Encoda</a>, but
+            you can also author them in each format.</p>
+        </div>
+      </div>
+      <h2 id="jats-4">JATS</h2>
+      <p><code>Table</code> is analogous, and structurally similar to, the JATS <a
+          href="https://jats.nlm.nih.gov/articleauthoring/tag-library/1.2/element/table.html"><code>&lt;table&gt;</code></a>
+        type. They both store data in a way that is &quot;intended to be converted easily to the
+        XHMTL table element.&quot;</p>
+      <h3 id="simple-10">Simple</h3>
+      <pre data-export="simple"><code class="language-jats">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body/&gt;
+    &lt;back&gt;
+        &lt;ref-list&gt;
+            &lt;title&gt;References&lt;/title&gt;
+        &lt;/ref-list&gt;
+    &lt;/back&gt;
+&lt;/article&gt;</code></pre>
+      <h3 id="table-with-rows-amp-cells-1">Table with Rows &amp; Cells</h3>
+      <pre data-export="complex"><code class="language-jats">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body/&gt;
+    &lt;back&gt;
+        &lt;ref-list&gt;
+            &lt;title&gt;References&lt;/title&gt;
+        &lt;/ref-list&gt;
+    &lt;/back&gt;
+&lt;/article&gt;</code></pre>
+      <h2 id="mdast-3">mdast</h2>
+      <p><code>Table</code> is analogous to the mdast <a
+          href="https://github.com/syntax-tree/mdast#table"><code>Table</code></a> node type,
+        however note that unlike the mdast equivalent, the Stencila variant does not contain the
+        stylistic <code>align</code> field.</p>
+      <h3 id="simple-11">Simple</h3>
+      <pre data-export="simple"><code class="language-markdown">|  |</code></pre>
+      <h3 id="table-with-rows-amp-cells-2">Table with Rows &amp; Cells</h3>
+      <pre data-export="complex"><code class="language-markdown">| one   | two  |
+| ----- | ---- |
+| three | four |</code></pre>
+      <h2 id="opendocument-4">OpenDocument</h2>
+      <p><code>Table</code> is analogous to the OpenDocument <a
+          href="http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part1.html#__RefHeading__1415586_253892949"><code>&lt;table:table&gt;</code></a>
+        element, which is the root element for a table.</p>
+      <h2 id="examples-12">Examples</h2>
+      <h5 id="auto-included-from-quotexamplestabletableyamlquot">(auto-included from
+        &quot;examples/Table/*.Table.yaml&quot;)</h5>
+      <pre><code class="language-yaml"># Recreates the headers and first two rows from
+# https://www.w3.org/WAI/tutorials/tables/two-headers/#table-with-header-cells-in-the-top-row-and-first-column
+type: Table
+rows:
+  - type: TableRow
+    kind: header
+    cells:
+      - type: TableCell
+        content:
+          - Monday
+      - type: TableCell
+        content:
+          - Tuesday
+      - type: TableCell
+        content:
+          - Wednesday
+      - type: TableCell
+        content:
+          - Thursday
+      - type: TableCell
+        content:
+          - Friday
+  - type: TableRow
+    cells:
+      - type: TableCell
+        kind: header
+        content:
+          - &#39;09:00 - 11:00&#39;
+      - type: TableCell
+        content:
+          - Closed
+      - type: TableCell
+        content:
+          - Open
+      - type: TableCell
+        content:
+          - Open
+      - type: TableCell
+        content:
+          - Closed
+      - type: TableCell
+        content:
+          - Closed
+  - type: TableRow
+    cells:
+      - type: TableCell
+        kind: header
+        content:
+          - &#39;11:00 - 13:00&#39;
+      - type: TableCell
+        content:
+          - Open
+      - type: TableCell
+        content:
+          - Open
+      - type: TableCell
+        content:
+          - Closed
+      - type: TableCell
+        content:
+          - Closed
+      - type: TableCell
+        content:
+          - Closed
+</code></pre>
+      <pre><code class="language-yaml"># Recreates the table from
+# https://www.w3.org/WAI/tutorials/tables/irregular/#table-with-two-tier-headers
+type: Table
+rows:
+  - type: TableRow
+    cells:
+      - type: TableCell
+        rowspan: 2
+        content: []
+      - type: TableCell
+        kind: header
+        colspan: 2
+        content:
+          - Mars
+      - type: TableCell
+        kind: header
+        colspan: 2
+        content:
+          - Venus
+  - type: TableRow
+    cells:
+      - type: TableCell
+        content:
+          - Produced
+      - type: TableCell
+        kind: header
+        content:
+          - Sold
+  - type: TableRow
+    cells:
+      - type: TableCell
+        content:
+          - Produced
+      - type: TableCell
+        kind: header
+        content:
+          - Sold
+  - type: TableRow
+    cells:
+      - type: TableCell
+        kind: header
+        content:
+          - Teddy Bears
+      - type: TableCell
+        content:
+          - 50,000
+      - type: TableCell
+        content:
+          - 30,000
+      - type: TableCell
+        content:
+          - 100,000
+      - type: TableCell
+        content:
+          - 80,000
+  - type: TableRow
+    cells:
+      - type: TableCell
+        kind: header
+        content:
+          - Board Games
+      - type: TableCell
+        content:
+          - 10,000
+      - type: TableCell
+        content:
+          - 5,000
+      - type: TableCell
+        content:
+          - 12,000
+      - type: TableCell
+        content:
+          - 9,000
+</code></pre>
+      <pre><code class="language-yaml">type: Table
+rows:
+  - type: TableRow
+    cells:
+      - type: TableCell
+        content:
+          - 1
+      - type: TableCell
+        content:
+          - 2
+</code></pre>
+    </article>
+  </body>
+
+</html>

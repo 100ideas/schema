@@ -1,0 +1,76 @@
+{
+  "title": "Link",
+  "@id": "stencila:Link",
+  "extends": "Entity",
+  "role": "secondary",
+  "status": "unstable",
+  "category": "prose",
+  "description": "A hyperlink to other pages, sections within the same document, resources, or any URL.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "Link"
+      ],
+      "default": "Link",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "content": {
+      "@id": "stencila:content",
+      "description": "The textual content of the link.",
+      "type": "array",
+      "items": {
+        "$ref": "InlineContent.schema.json"
+      },
+      "from": "Link"
+    },
+    "target": {
+      "@id": "stencila:target",
+      "description": "The target of the link.",
+      "type": "string",
+      "format": "uri",
+      "from": "Link"
+    },
+    "title": {
+      "@id": "schema:headline",
+      "description": "A title for the link.",
+      "$comment": "This property is analagous to the HTML `title` global attribute which\nrepresents [\"advisory information related to the element\"](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title)\n",
+      "type": "string",
+      "from": "Link"
+    },
+    "relation": {
+      "@id": "schema:linkRelationship",
+      "description": "The relation between the target and the current thing.",
+      "type": "string",
+      "from": "Link"
+    }
+  },
+  "required": [
+    "type",
+    "content",
+    "target"
+  ],
+  "file": "Link.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/Link.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/Link.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "propertyAliases": {}
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Parameter",
+  "@id": "stencila:Parameter",
+  "extends": "Variable",
+  "role": "secondary",
+  "status": "unstable",
+  "category": "code",
+  "description": "A parameter that can be set and used in evaluated code.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "Parameter"
+      ],
+      "default": "Parameter",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "name": {
+      "@id": "schema:name",
+      "description": "The name the parameter is referred to in code.",
+      "type": "string",
+      "pattern": "[a-z_][A-z0-9_]*",
+      "$comment": "This regex allows for snake_case and camelCase names but excludes\nPascalCase for parameter names.\n",
+      "from": "Variable"
+    },
+    "schema": {
+      "@id": "stencila:schema",
+      "description": "The schema that the value of the parameter will be validated against.",
+      "allOf": [
+        {
+          "$ref": "SchemaTypes.schema.json"
+        }
+      ],
+      "from": "Variable"
+    },
+    "default": {
+      "@id": "stencila:value",
+      "description": "The default value of the parameter.",
+      "allOf": [
+        {
+          "$ref": "Node.schema.json"
+        }
+      ],
+      "from": "Parameter",
+      "override": true
+    },
+    "required": {
+      "@id": "stencila:required",
+      "description": "Is this parameter required, if not it should have a default or default is assumed to be null.",
+      "type": "boolean",
+      "from": "Parameter",
+      "override": true
+    },
+    "repeats": {
+      "@id": "stencila:repeats",
+      "description": "Indicates that this parameter is variadic and can accept multiple arguments.",
+      "type": "boolean",
+      "from": "Parameter"
+    },
+    "extends": {
+      "@id": "stencila:extends",
+      "description": "Indicates that this parameter is variadic and can accept multiple named arguments.",
+      "type": "boolean",
+      "from": "Parameter"
+    }
+  },
+  "file": "Parameter.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/Parameter.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/Parameter.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "name"
+  ],
+  "propertyAliases": {}
+}

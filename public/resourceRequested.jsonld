@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:resourceRequested",
+  "@type": "schema:Property",
+  "schema:name": "resourceRequested",
+  "schema:description": "The amount of the resource that has been requested (and possibly reserved).",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:ResourceParameters"
+    }
+  ]
+}

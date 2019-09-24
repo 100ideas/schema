@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:minimum",
+  "@type": "schema:Property",
+  "schema:name": "minimum",
+  "schema:description": "The inclusive lower limit for a numeric node.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:IntegerSchema"
+    },
+    {
+      "@id": "stencila:NumberSchema"
+    }
+  ]
+}

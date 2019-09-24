@@ -1,0 +1,63 @@
+{
+  "title": "CodeFragment",
+  "@id": "stencila:CodeFragment",
+  "extends": "Code",
+  "role": "secondary",
+  "status": "stable",
+  "category": "code",
+  "description": "Inline code.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "CodeFragment",
+        "CodeExpression"
+      ],
+      "default": "CodeFragment",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "programmingLanguage": {
+      "@id": "schema:programmingLanguage",
+      "description": "The programming language of the code.",
+      "type": "string",
+      "from": "Code"
+    },
+    "text": {
+      "@id": "schema:text",
+      "description": "The text of the code.",
+      "type": "string",
+      "from": "Code"
+    }
+  },
+  "file": "CodeFragment.schema.yaml",
+  "children": [
+    "CodeExpression"
+  ],
+  "descendants": [
+    "CodeExpression"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/CodeFragment.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/CodeFragment.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "text"
+  ],
+  "propertyAliases": {}
+}

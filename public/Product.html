@@ -1,0 +1,165 @@
+<html>
+
+  <head>
+    <title>Product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Product</h1>
+      <h2 id="status-stable-role-tertiary">Status: stable, Role: tertiary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>Any offered product or service. For example, a pair of shoes; a haircut; or an episode
+            of a TV show streamed online. </p>
+          <h2 id="properties-2">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>Product</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>alternateNames</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Alternate names (aliases) for the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>brands</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Brand.html"><code>Brand</code></a>​<code>&gt;</code></td>
+                <td>Brands that the product is labelled with.</td>
+                <td><a href="./Product.html">Product</a></td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>A description of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>logo</td>
+                <td><code>string&lt;uri&gt;</code> | <a
+                    href="./ImageObject.html"><code>ImageObject</code></a></td>
+                <td>The logo of the product.</td>
+                <td><a href="./Product.html">Product</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>productID</td>
+                <td><code>string</code></td>
+                <td>Product identification code.</td>
+                <td><a href="./Product.html">Product</a></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td><code>string&lt;uri&gt;</code></td>
+                <td>The URL of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>The <code>Product</code> type allows you to provide details about a product such as the
+        product brand, logo and ID. This type can be used as any kind of product that is not <a
+          href="/CreativeWork"><code>CreativeWork</code></a> item.</p>
+      <h1 id="examples-4">Examples</h1>
+      <p>The examples below are based on a model of <a
+          href="https://en.wikipedia.org/wiki/Astrolabe">astrolabe</a>.</p>
+      <pre data-import="example"><code class="language-json">{
+  &quot;type&quot;: &quot;Product&quot;,
+  &quot;brand&quot;: {
+    &quot;type&quot;: &quot;Brand&quot;,
+    &quot;name&quot;: &quot;Astro&quot;
+  },
+  &quot;name&quot;: &quot;Astrolabe&quot;,
+  &quot;logo&quot;: {
+    &quot;type&quot;: &quot;ImageObject&quot;,
+    &quot;contentUrl&quot;: &quot;http://www.product-astrolabe.com/logo.png&quot;,
+    &quot;caption&quot;: &quot;Astrolabe Logo&quot;
+  },
+  &quot;productID&quot;: &quot;AA55&quot;
+}</code></pre>
+      <h1 id="encodings-2">Encodings</h1>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>This section describes common encodings for this node type. These samples are generated
+            from the above examples by <a href="https://stencila.github.io/encoda">Encoda</a>, but
+            you can also author them in each format.</p>
+        </div>
+      </div>
+      <h2 id="jats-2">JATS</h2>
+      <p><code>Product</code> is analogous, and structurally similar to, the JATS <a
+          href="https://jats.nlm.nih.gov/archiving/tag-library/1.1/element/product.html"><code>&lt;product&gt;</code></a>
+        element which contains the metadata concerning one product (for example, a book, software
+        package, website, or hardware component) discussed in an article.</p>
+      <pre data-export="example"><code class="language-jats">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body/&gt;
+    &lt;back&gt;
+        &lt;ref-list&gt;
+            &lt;title&gt;References&lt;/title&gt;
+        &lt;/ref-list&gt;
+    &lt;/back&gt;
+&lt;/article&gt;</code></pre>
+      <h2 id="google-structured-data">Google Structured Data</h2>
+      <p>To meet Google&#39;s guidelines for <a
+          href="https://developers.google.com/search/docs/data-types/product#product"><code>Product</code></a>
+        instances are required to have <code>image</code> and <code>name</code> properties.</p>
+      <h2 id="examples-5">Examples</h2>
+      <h5 id="auto-included-from-quotexamplesproductproductyamlquot">(auto-included from
+        &quot;examples/Product/*.Product.yaml&quot;)</h5>
+      <pre><code class="language-yaml">type: Product
+brand:
+  type: Brand
+  logo: https://stenci.la/img/icons/stencil-machine.svg
+  reviews:
+    - &#39;Awful. Broke my computer and research.&#39;
+productID: 675ef78
+</code></pre>
+    </article>
+  </body>
+
+</html>

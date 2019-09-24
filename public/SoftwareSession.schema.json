@@ -1,0 +1,134 @@
+{
+  "title": "SoftwareSession",
+  "@id": "stencila:SoftwareSession",
+  "extends": "Thing",
+  "role": "primary",
+  "status": "experimental",
+  "category": "code",
+  "description": "Represents a runtime session with the resources and image that\nis required by software to execute.\n",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "SoftwareSession"
+      ],
+      "default": "SoftwareSession",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "alternateNames": {
+      "@id": "schema:alternateName",
+      "description": "Alternate names (aliases) for the item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "from": "Thing",
+      "aliases": [
+        "alternateName"
+      ]
+    },
+    "description": {
+      "@id": "schema:description",
+      "description": "A description of the item.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Node.schema.json"
+          }
+        }
+      ],
+      "from": "Thing"
+    },
+    "name": {
+      "@id": "schema:name",
+      "description": "The name of the item.",
+      "type": "string",
+      "from": "Thing"
+    },
+    "url": {
+      "@id": "schema:url",
+      "description": "The URL of the item.",
+      "type": "string",
+      "format": "uri",
+      "from": "Thing"
+    },
+    "volumeMounts": {
+      "@id": "stencila:volumeMount",
+      "description": "Volumes to mount in the session.",
+      "type": "array",
+      "items": [
+        {
+          "$ref": "Mount.schema.json"
+        }
+      ],
+      "from": "SoftwareSession",
+      "aliases": [
+        "volumeMount"
+      ]
+    },
+    "cpuResource": {
+      "@id": "stencila:cpuResource",
+      "description": "The CPU resource for the session.",
+      "allOf": [
+        {
+          "$ref": "ResourceParameters.schema.json"
+        }
+      ],
+      "from": "SoftwareSession"
+    },
+    "memoryResource": {
+      "@id": "stencila:memoryResource",
+      "description": "The memory resource for the session.",
+      "allOf": [
+        {
+          "$ref": "ResourceParameters.schema.json"
+        }
+      ],
+      "from": "SoftwareSession"
+    },
+    "environment": {
+      "@id": "stencila:environment",
+      "description": "Definition of the environment to execute this session in.",
+      "allOf": [
+        {
+          "$ref": "Environment.schema.json"
+        }
+      ],
+      "from": "SoftwareSession"
+    }
+  },
+  "required": [
+    "type",
+    "environment"
+  ],
+  "file": "SoftwareSession.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/SoftwareSession.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/SoftwareSession.schema.yaml",
+  "type": "object",
+  "propertyAliases": {
+    "alternateName": "alternateNames",
+    "volumeMount": "volumeMounts"
+  },
+  "additionalProperties": false
+}

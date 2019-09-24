@@ -1,0 +1,70 @@
+{
+  "title": "Code",
+  "@id": "stencila:Code",
+  "extends": "Entity",
+  "role": "secondary",
+  "status": "stable",
+  "category": "code",
+  "description": "Inline code.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "Code",
+        "CodeBlock",
+        "CodeChunk",
+        "CodeExpression",
+        "CodeFragment"
+      ],
+      "default": "Code",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "programmingLanguage": {
+      "@id": "schema:programmingLanguage",
+      "description": "The programming language of the code.",
+      "type": "string",
+      "from": "Code"
+    },
+    "text": {
+      "@id": "schema:text",
+      "description": "The text of the code.",
+      "type": "string",
+      "from": "Code"
+    }
+  },
+  "required": [
+    "type",
+    "text"
+  ],
+  "file": "Code.schema.yaml",
+  "children": [
+    "CodeBlock",
+    "CodeFragment"
+  ],
+  "descendants": [
+    "CodeBlock",
+    "CodeChunk",
+    "CodeExpression",
+    "CodeFragment"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/Code.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/Code.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "propertyAliases": {}
+}

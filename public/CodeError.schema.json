@@ -1,0 +1,64 @@
+{
+  "title": "CodeError",
+  "@id": "stencila:CodeError",
+  "extends": "Entity",
+  "role": "secondary",
+  "status": "unstable",
+  "category": "code",
+  "description": "An error that occured when parsing, compiling or executing some Code.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "CodeError"
+      ],
+      "default": "CodeError",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "kind": {
+      "@id": "stencila:errorKind",
+      "description": "The type of error.",
+      "type": "string",
+      "from": "CodeError"
+    },
+    "message": {
+      "@id": "stencila:errorMessage",
+      "description": "The error message or brief description of the error.",
+      "type": "string",
+      "from": "CodeError"
+    },
+    "trace": {
+      "@id": "stencila:trace",
+      "description": "Stack trace leading up to the error.",
+      "type": "string",
+      "from": "CodeError"
+    }
+  },
+  "required": [
+    "type",
+    "kind"
+  ],
+  "file": "CodeError.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/CodeError.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/CodeError.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "propertyAliases": {}
+}

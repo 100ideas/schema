@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:Emphasis",
+  "@type": "schema:Class",
+  "schema:name": "Emphasis",
+  "schema:description": "Emphasised content."
+}

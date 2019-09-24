@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:ResourceParameters",
+  "@type": "schema:Class",
+  "schema:name": "ResourceParameters",
+  "schema:description": "Describes limits or requested amounts for a particular resource (e.g. memory or CPU).\n"
+}

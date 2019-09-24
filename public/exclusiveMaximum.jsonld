@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:exclusiveMaximum",
+  "@type": "schema:Property",
+  "schema:name": "exclusiveMaximum",
+  "schema:description": "The exclusive upper limit for a numeric node.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:IntegerSchema"
+    },
+    {
+      "@id": "stencila:NumberSchema"
+    }
+  ]
+}

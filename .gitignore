@@ -1,4 +1,4 @@
-/public
+# /public # temporarily disable for hacked together gh-pages
 /dist
 /node_modules
 /coverage

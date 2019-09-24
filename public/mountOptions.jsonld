@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:mountOptions",
+  "@type": "schema:Property",
+  "schema:name": "mountOptions",
+  "schema:description": "A list of options to use when applying the mount.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Mount"
+    }
+  ]
+}

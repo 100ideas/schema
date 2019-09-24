@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:Code",
+  "@type": "schema:Class",
+  "schema:name": "Code",
+  "schema:description": "Inline code."
+}

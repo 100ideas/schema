@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:required",
+  "@type": "schema:Property",
+  "schema:name": "required",
+  "schema:description": "Is this parameter required, if not it should have a default or default is assumed to be null.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Parameter"
+    },
+    {
+      "@id": "stencila:Variable"
+    }
+  ]
+}

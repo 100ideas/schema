@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:CodeChunk",
+  "@type": "schema:Class",
+  "schema:name": "CodeChunk",
+  "schema:description": "A executable chunk of code."
+}

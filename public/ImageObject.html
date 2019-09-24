@@ -1,0 +1,257 @@
+<html>
+
+  <head>
+    <title>ImageObject</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">ImageObject</h1>
+      <h2 id="status-stable-role-secondary">Status: stable, Role: secondary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>An image file.</p>
+          <h2 id="properties-2">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>contentUrl <em>(required)</em></strong></td>
+                <td><code>string</code></td>
+                <td>URL for the actual bytes of the media object, for example the image file or
+                  video file.</td>
+                <td><a href="./MediaObject.html">MediaObject</a></td>
+              </tr>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>ImageObject</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>alternateNames</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Alternate names (aliases) for the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>authors</td>
+                <td><code>codec&lt;csi&gt;</code> &amp; <code>array&lt;</code>​<a
+                    href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>The authors of this creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>bitrate</td>
+                <td><code>number</code></td>
+                <td>Bitrate in megabits per second (Mbit/s, Mb/s, Mbps).</td>
+                <td><a href="./MediaObject.html">MediaObject</a></td>
+              </tr>
+              <tr>
+                <td>caption</td>
+                <td><code>string</code></td>
+                <td>The caption for this image.</td>
+                <td><a href="./ImageObject.html">ImageObject</a></td>
+              </tr>
+              <tr>
+                <td>content</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>The structured content of this creative work c.f. property `text`.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>contentSize</td>
+                <td><code>number</code></td>
+                <td>File size in megabits (Mbit, Mb).</td>
+                <td><a href="./MediaObject.html">MediaObject</a></td>
+              </tr>
+              <tr>
+                <td>dateCreated</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date/time of creation.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>dateModified</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date/time of most recent modification.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>datePublished</td>
+                <td><a href="./Date.html"><code>Date</code></a> | <code>string&lt;date&gt;</code> |
+                  <code>string&lt;date-time&gt;</code></td>
+                <td>Date of first publication.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>A description of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>editors</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Person.html"><code>Person</code></a>​<code>&gt;</code></td>
+                <td>Persons who edited the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>embedUrl</td>
+                <td><code>string</code></td>
+                <td>URL that can be used to embed the media on a web page via a specific media
+                  player.</td>
+                <td><a href="./MediaObject.html">MediaObject</a></td>
+              </tr>
+              <tr>
+                <td>format</td>
+                <td><code>string</code></td>
+                <td>Media type (MIME type) as per
+                  http://www.iana.org/assignments/media-types/media-types.xhtml.</td>
+                <td><a href="./MediaObject.html">MediaObject</a></td>
+              </tr>
+              <tr>
+                <td>funders</td>
+                <td><code>array&lt;</code>​<a href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>Person or organisation that funded the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>isPartOf</td>
+                <td><a href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a></td>
+                <td>An item or other CreativeWork that this CreativeWork is a part of.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>keywords</td>
+                <td><code>codec&lt;csi&gt;</code> &amp;
+                  <code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Keywords or tags used to describe this content. Multiple entries in a keywords
+                  list are typically delimited by commas.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>licenses</td>
+                <td><code>array&lt;</code>​<code>string&lt;uri&gt;</code> | <a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>License documents that applies to this content, typically indicated by URL.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>parts</td>
+                <td><code>array&lt;</code>​<a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>Elements of the collection which can be a variety of different elements, such as
+                  Articles, Datatables, Tables and more.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>publisher</td>
+                <td><a href="./Person.html"><code>Person</code></a> | <a
+                    href="./Organization.html"><code>Organization</code></a></td>
+                <td>A publisher of the CreativeWork.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>references</td>
+                <td><code>array&lt;</code>​<code>string</code> | <a
+                    href="./CreativeWorkTypes.html"><code>CreativeWorkTypes</code></a>​<code>&gt;</code>
+                </td>
+                <td>References to other creative works, such as another publication, web page,
+                  scholarly article, etc.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td><code>string</code></td>
+                <td>The textual content of this creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>thumbnail</td>
+                <td><a href="./ImageObject.html"><code>ImageObject</code></a></td>
+                <td>Thumbnail image of this image.</td>
+                <td><a href="./ImageObject.html">ImageObject</a></td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>The title of the creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td><code>string&lt;uri&gt;</code></td>
+                <td>The URL of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>version</td>
+                <td><code>string</code> | <code>number</code></td>
+                <td>The version of the creative work.</td>
+                <td><a href="./CreativeWork.html">CreativeWork</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>The <code>ImageObject</code> type allows you to provide details about an image file (in any
+        format) such as its caption, thumbnail and further information inherited from <a
+          href="/MediaObject"><code>MediaObject</code></a>.</p>
+      <h1 id="examples-2">Examples</h1>
+      <p>A picture of a kiwi (the bird, not the people).</p>
+      <pre><code class="language-json">{
+  &quot;type&quot;: &quot;ImageObject&quot;,
+  &quot;caption&quot;: &quot;Kiwi&quot;,
+  &quot;contentSize&quot;: &quot;10.4&quot;,
+  &quot;contentUrl&quot;: &quot;http://www.example.com/kiwi.png&quot;,
+  &quot;encodingFormat&quot;: &quot;image/png&quot;,
+  &quot;thumbnail&quot;: {
+    &quot;type&quot;: &quot;ImageObject&quot;,
+    &quot;contentUrl&quot;: &quot;http://www.example.com/kiwi_mini.png&quot;
+  }
+}</code></pre>
+    </article>
+  </body>
+
+</html>

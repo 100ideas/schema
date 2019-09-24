@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:errorMessage",
+  "@type": "schema:Property",
+  "schema:name": "message",
+  "schema:description": "The error message or brief description of the error.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:CodeError"
+    }
+  ]
+}

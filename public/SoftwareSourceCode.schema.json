@@ -1,0 +1,438 @@
+{
+  "title": "SoftwareSourceCode",
+  "@id": "schema:SoftwareSourceCode",
+  "extends": "CreativeWork",
+  "role": "primary",
+  "status": "unstable",
+  "category": "code",
+  "description": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.\n",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "SoftwareSourceCode"
+      ],
+      "default": "SoftwareSourceCode",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "alternateNames": {
+      "@id": "schema:alternateName",
+      "description": "Alternate names (aliases) for the item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "from": "Thing",
+      "aliases": [
+        "alternateName"
+      ]
+    },
+    "description": {
+      "@id": "schema:description",
+      "description": "A description of the item.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Node.schema.json"
+          }
+        }
+      ],
+      "from": "Thing"
+    },
+    "name": {
+      "@id": "schema:name",
+      "description": "The name of the item.",
+      "type": "string",
+      "from": "Thing"
+    },
+    "url": {
+      "@id": "schema:url",
+      "description": "The URL of the item.",
+      "type": "string",
+      "format": "uri",
+      "from": "Thing"
+    },
+    "authors": {
+      "@id": "schema:author",
+      "description": "The authors of this creative work.",
+      "type": "array",
+      "allOf": [
+        {
+          "codec": "csi"
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "Person.schema.json"
+              },
+              {
+                "$ref": "Organization.schema.json"
+              }
+            ]
+          }
+        }
+      ],
+      "from": "CreativeWork",
+      "aliases": [
+        "author"
+      ]
+    },
+    "content": {
+      "@id": "stencila:content",
+      "description": "The structured content of this creative work c.f. property `text`.",
+      "type": "array",
+      "items": {
+        "$ref": "Node.schema.json"
+      },
+      "from": "CreativeWork"
+    },
+    "dateCreated": {
+      "@id": "schema:dateCreated",
+      "description": "Date/time of creation.",
+      "anyOf": [
+        {
+          "$ref": "Date.schema.json"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "dateModified": {
+      "@id": "schema:dateModified",
+      "description": "Date/time of most recent modification.",
+      "anyOf": [
+        {
+          "$ref": "Date.schema.json"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "datePublished": {
+      "@id": "schema:datePublished",
+      "aliases": [
+        "date"
+      ],
+      "description": "Date of first publication.",
+      "anyOf": [
+        {
+          "$ref": "Date.schema.json"
+        },
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "editors": {
+      "@id": "schema:editor",
+      "description": "Persons who edited the CreativeWork.\n",
+      "type": "array",
+      "items": {
+        "$ref": "Person.schema.json"
+      },
+      "from": "CreativeWork",
+      "aliases": [
+        "editor"
+      ]
+    },
+    "funders": {
+      "@id": "schema:funder",
+      "description": "Person or organisation that funded the CreativeWork.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "Person.schema.json"
+          },
+          {
+            "$ref": "Organization.schema.json"
+          }
+        ]
+      },
+      "from": "CreativeWork",
+      "aliases": [
+        "funder"
+      ]
+    },
+    "keywords": {
+      "@id": "schema:keywords",
+      "description": "Keywords or tags used to describe this content.\nMultiple entries in a keywords list are typically delimited by commas.\n",
+      "allOf": [
+        {
+          "codec": "csi"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "isPartOf": {
+      "@id": "schema:isPartOf",
+      "description": "An item or other CreativeWork that this CreativeWork is a part of.\n",
+      "allOf": [
+        {
+          "$ref": "CreativeWorkTypes.schema.json"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "licenses": {
+      "@id": "schema:license",
+      "description": "License documents that applies to this content, typically indicated by URL.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "$ref": "CreativeWorkTypes.schema.json"
+          }
+        ]
+      },
+      "from": "CreativeWork",
+      "aliases": [
+        "license"
+      ]
+    },
+    "parts": {
+      "@id": "schema:hasParts",
+      "aliases": [
+        "hasParts",
+        "part"
+      ],
+      "description": "Elements of the collection which can be a variety of different elements,\nsuch as Articles, Datatables, Tables and more.\n",
+      "type": "array",
+      "items": {
+        "$ref": "CreativeWorkTypes.schema.json"
+      },
+      "from": "CreativeWork"
+    },
+    "publisher": {
+      "@id": "schema:publisher",
+      "description": "A publisher of the CreativeWork.\n",
+      "anyOf": [
+        {
+          "$ref": "Person.schema.json"
+        },
+        {
+          "$ref": "Organization.schema.json"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "references": {
+      "@id": "schema:citation",
+      "aliases": [
+        "citations",
+        "reference"
+      ],
+      "description": "References to other creative works, such as another publication,\nweb page, scholarly article, etc.\n",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "CreativeWorkTypes.schema.json"
+          }
+        ]
+      },
+      "from": "CreativeWork"
+    },
+    "text": {
+      "@id": "schema:text",
+      "description": "The textual content of this creative work.",
+      "type": "string",
+      "from": "CreativeWork"
+    },
+    "title": {
+      "@id": "schema:headline",
+      "description": "The title of the creative work.",
+      "aliases": [
+        "headline"
+      ],
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Node.schema.json"
+          }
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "version": {
+      "@id": "schema:version",
+      "description": "The version of the creative work.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "from": "CreativeWork"
+    },
+    "codeRepository": {
+      "@id": "schema:codeRepository",
+      "description": "Link to the repository where the un-compiled, human readable code and related\ncode is located.\n",
+      "type": "string",
+      "format": "uri",
+      "from": "SoftwareSourceCode"
+    },
+    "codeSampleType": {
+      "@id": "schema:codeSampleType",
+      "description": "What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.\n",
+      "type": "string",
+      "from": "SoftwareSourceCode"
+    },
+    "maintainers": {
+      "@id": "codemeta:maintainer",
+      "description": "The people or organizations who maintain the software.\n",
+      "type": "array",
+      "items": [
+        {
+          "$ref": "Organization.schema.json"
+        },
+        {
+          "$ref": "Person.schema.json"
+        }
+      ],
+      "from": "SoftwareSourceCode",
+      "aliases": [
+        "maintainer"
+      ]
+    },
+    "programmingLanguage": {
+      "@id": "schema:programmingLanguage",
+      "description": "The computer programming language.\n",
+      "type": "string",
+      "from": "SoftwareSourceCode"
+    },
+    "runtimePlatform": {
+      "@id": "schema:runtimePlatform",
+      "description": "Runtime platform or script interpreter dependencies (Example - Java v1,\nPython2.3, .Net Framework 3.0).\n",
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ],
+      "from": "SoftwareSourceCode"
+    },
+    "softwareRequirements": {
+      "@id": "schema:softwareRequirements",
+      "description": "Dependency requirements for the software.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "SoftwareSourceCode.schema.json"
+          },
+          {
+            "$ref": "SoftwareApplication.schema.json"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "from": "SoftwareSourceCode",
+      "aliases": [
+        "softwareRequirement"
+      ]
+    },
+    "targetProducts": {
+      "@id": "schema:targetProduct",
+      "description": "Target operating system or product to which the code applies.\n",
+      "type": "array",
+      "items": [
+        {
+          "$ref": "SoftwareApplication.schema.json"
+        }
+      ],
+      "from": "SoftwareSourceCode",
+      "aliases": [
+        "targetProduct"
+      ]
+    }
+  },
+  "file": "SoftwareSourceCode.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/SoftwareSourceCode.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/SoftwareSourceCode.schema.yaml",
+  "type": "object",
+  "propertyAliases": {
+    "alternateName": "alternateNames",
+    "author": "authors",
+    "date": "datePublished",
+    "editor": "editors",
+    "funder": "funders",
+    "license": "licenses",
+    "hasParts": "parts",
+    "part": "parts",
+    "citations": "references",
+    "reference": "references",
+    "headline": "title",
+    "maintainer": "maintainers",
+    "softwareRequirement": "softwareRequirements",
+    "targetProduct": "targetProducts"
+  },
+  "additionalProperties": false,
+  "required": [
+    "type"
+  ]
+}

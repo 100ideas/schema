@@ -1,0 +1,389 @@
+<html>
+
+  <head>
+    <title>Person</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Person</h1>
+      <h2 id="status-stable-role-secondary">Status: stable, Role: secondary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>A person (alive, dead, undead, or fictional).</p>
+          <h2 id="properties">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>Person</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>address</td>
+                <td><code>string</code></td>
+                <td>Postal address for the person.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>affiliations</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>Organizations that the person is affiliated with.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>alternateNames</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Alternate names (aliases) for the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>A description of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>emails</td>
+                <td><code>array&lt;</code>​<code>string&lt;email&gt;</code>​<code>&gt;</code></td>
+                <td>Email addresses for the person.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>familyNames</td>
+                <td><code>codec&lt;ssi&gt;</code> &amp;
+                  <code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Family name. In the U.S., the last name of a person.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>funders</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Organization.html"><code>Organization</code></a> | <a
+                    href="./Person.html"><code>Person</code></a>​<code>&gt;</code></td>
+                <td>A person or organization that supports (sponsors) something through some kind of
+                  financial contribution.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>givenNames</td>
+                <td><code>codec&lt;ssi&gt;</code> &amp;
+                  <code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Given name. In the U.S., the first name of a person.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>honorificPrefix</td>
+                <td><code>string</code></td>
+                <td>An honorific prefix preceding a person&#39;s name such as Dr/Mrs/Mr.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>honorificSuffix</td>
+                <td><code>string</code></td>
+                <td>An honorific suffix after a person&#39;s name such as MD/PhD/MSCSW.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>jobTitle</td>
+                <td><code>string</code></td>
+                <td>The job title of the person (for example, Financial Manager).</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>memberOf</td>
+                <td><code>array&lt;</code>​<a
+                    href="./Organization.html"><code>Organization</code></a>​<code>&gt;</code></td>
+                <td>An organization (or program membership) to which this person belongs.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>telephoneNumbers</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Telephone numbers for the person.</td>
+                <td><a href="./Person.html">Person</a></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td><code>string&lt;uri&gt;</code></td>
+                <td>The URL of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>The <code>Person</code> type allows you to provide details about a person such as their
+        given and family names, any honorific prefix or suffix, and contact details such as an email
+        address. This type of often used to describe the <code>authors</code> of an <a
+          href="/Article"><code>Article</code></a>, or other <a
+          href="/CreativeWork"><code>CreativeWork</code></a>.</p>
+      <h1 id="encodings">Encodings</h1>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>This section describes common encodings for this node type. These samples are generated
+            from the above examples by <a href="https://stencila.github.io/encoda">Encoda</a>, but
+            you can also author them in each format.</p>
+        </div>
+      </div>
+      <p>These examples, based on Marie Curie, illustrate alternative ways for specifying a
+        <code>Person</code>. <a href="https://en.wikipedia.org/wiki/Marie_Curie">Marie Curie</a> was
+        the first woman to win a Nobel Prize, the first person and only woman to win twice, and the
+        only person to win a Nobel Prize in two different sciences.</p>
+      <p>&lt;!-- These examples will eventually be wrapped in React components to illustrate how the
+        input is converted into Stencila JSON See https://github.com/stencila/schema/issues/45
+        --&gt;</p>
+      <h2 id="json">JSON</h2>
+      <p>Dr Curie can be represented in canonical Stencila JSON by:</p>
+      <pre data-validate="" data-import="example1"><code class="language-json">{
+  &quot;type&quot;: &quot;Person&quot;,
+  &quot;honorificPrefix&quot;: &quot;Dr&quot;,
+  &quot;givenNames&quot;: [&quot;Marie&quot;],
+  &quot;familyNames&quot;: [&quot;Skłodowska&quot;, &quot;Curie&quot;],
+  &quot;honorificSuffix&quot;: &quot;PhD&quot;
+}</code></pre>
+      <h2 id="yaml">YAML</h2>
+      <p>YAML provides a more readable format for providing details about a person in places like
+        Markdown front-matter. In the following example, we take advantage of <a
+          href="/docs/property-aliases">property aliases</a> to use the shorter <code>prefix</code>
+        and <code>suffix</code> property names, and the US convention of <code>firstNames</code> and
+        <code>lastName</code> (instead of <code>givenNames</code> and <code>familyNames</code>). We
+        also use <a href="/docs/property-parsing">property parsing</a> to be be able to write
+        <code>firstNames</code> as a space separated values.</p>
+      <pre
+        data-coerce=""><code class="language-md">---
+title: Recherches sur les substances radioactives
+authors:
+  - type: Person
+    prefix: Dr
+    firstNames: Marie Skłodowska
+    lastName: Curie
+    suffix: PhD
+---
+
+Le présent travail a pour but d&#39;exposer les recherches que je poursuis depuis plus de 4 ans sur les substances radioactives. J&#39;ai commencé ces recherches par une étude du rayonnement uranique cjui a été découvert par M. Becquerel. Les résultats auxquels ...</code></pre>
+      <p>We can shorten this further by specifying Dr Curie&#39;s details as a string:</p>
+      <pre data-coerce=""><code class="language-yaml">type: Article
+title: Recherches sur les substances radioactives
+authors:
+  - Dr Marie Skłodowska Curie PhD</code></pre>
+      <p>If there had been email and web pages in the 1900s then we could also add those for her and
+        her colleagues:</p>
+      <pre data-coerce=""><code class="language-yaml">type: Article
+title: The Radioactive Constants as of 1930 Report of the International Radium-Standards Commission
+year: 1931
+url: https://link.aps.org/doi/10.1103/RevModPhys.3.427
+authors:
+  - Marie Curie &lt;marie@mariecurie.org.uk&gt; (https://www.mariecurie.org.uk/)
+  - Debierne, A.
+  - Eve, A. S.
+  - Geiger, H.
+  - Hahn, O.
+  - Lind, S. C.
+  - Meyer, St.
+  - Rutherford, Ernest (https://en.wikipedia.org/wiki/Ernest_Rutherford)
+  - Schweidler, E.</code></pre>
+      <h2 id="jats">JATS</h2>
+      <p><code>Person</code> is analogous, and structurally similar to, the JATS <a
+          href="https://jats.nlm.nih.gov/archiving/tag-library/1.1/element/contrib.html"><code>&lt;contrib&gt;</code></a>
+        element. JATS includes <code>&lt;custom-meta&gt;</code> element, this <em>&quot;element can
+          be used as an escape-hatch to record additional metadata that a publisher or archive
+          wishes to preserve (so that the intellectual work to capture that content will not be
+          lost) even though there is no direct expression for the metadata in the Tag
+          Set&quot;.</em></p>
+      <pre data-export="example1"><code class="language-jats">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body/&gt;
+    &lt;back&gt;
+        &lt;ref-list&gt;
+            &lt;title&gt;References&lt;/title&gt;
+        &lt;/ref-list&gt;
+    &lt;/back&gt;
+&lt;/article&gt;</code></pre>
+      <h2 id="opendocument">OpenDocument</h2>
+      <p><code>Person</code> is analogous to the OpenDocument <code>Author Fields</code> element
+        which is the elements in a single OpenDocument XML document:</p>
+      <blockquote>
+        <p>The <a
+            href="http://docs.oasis-open.org/office/v1.2/os/OpenDocument-v1.2-os-part1.html#__RefHeading__1415310_253892949"><code>Author
+              Fields</code></a> elements are:</p>
+        <ul>
+          <li>
+            <p>The &lt;text:author-name&gt; element represents the full name of the author of a
+              document.</p>
+          </li>
+          <li>
+            <p>The &lt;text:author-initials&gt; element represents the initials of the author of a
+              document.</p>
+          </li>
+        </ul>
+      </blockquote>
+      <h2 id="html5">HTML5</h2>
+      <p>In HTML5 metadata about the author can be included in two ways.</p>
+      <ol>
+        <li>
+          <p>If there is a link to the detailed information about the author (eg. their homepage),
+            <code>rel=&quot;author&quot;</code> with <code>link</code> or <code>a</code> <a
+              href="https://html.spec.whatwg.org/multipage/links.html#link-type-author">should be
+              used</a>. Example:</p>
+        </li>
+      </ol>
+      <pre><code class="language-html">&lt;a href=&quot;http://johnsplace.com&quot; rel=&quot;author&quot;&gt;John&lt;/a&gt;</code></pre>
+      <ol>
+        <li>
+          <p>If there is no link to the information about the author,
+            <code>class=&quot;author&quot;</code> attribute should be used with <code>area</code>,
+            <code>span</code> and so on. Example:</p>
+        </li>
+      </ol>
+      <pre><code class="language-html">&lt;span class=&quot;author&quot;&gt;John&lt;/span&gt;</code></pre>
+      <h2 id="crossref">Crossref</h2>
+      <p><code>Person</code> is analogous to the Crossref <a
+          href="https://support.crossref.org/hc/en-us/articles/214567746-Authors-and-editors"><code>&lt;contributors&gt;</code></a>
+        child element <a
+          href="https://data.crossref.org/reports/help/schema_doc/4.4.0/relations_xsd.html#http___www.crossref.org_relations.xsd_person_name"><code>&lt;person_name&gt;</code></a>
+        which describes a person who contributed to authoring or editing an entity.</p>
+      <h2 id="citation-style-language-csl">Citation Style Language (CSL)</h2>
+      <p><code>Person</code> is analogous to the CSL JSON Schema for <a
+          href="https://github.com/citation-style-language/schema/blob/f01ba9c5ec2055e381a38598919a379255c496c5/csl-data.json#L72"><code>author</code></a>
+        items which describe a person who contributed to authoring an entity.</p>
+      <h2 id="isa-framework">ISA framework</h2>
+      <p>The ISA metadata framework includes a <a
+          href="https://isa-specs.readthedocs.io/en/latest/isajson.html#person-schema-json"><code>person_schema.json</code></a>
+        which is similar to <code>Person</code>.</p>
+      <h1 id="summary">Summary</h1>
+      <p>The following table summarizes how properties of <code>Person</code> relate to other
+        schema.</p>
+      <table>
+        <tbody>
+          <tr>
+            <td><code>Person</code></td>
+            <td>Crossref <code>&lt;person-name&gt;</code></td>
+            <td>CSL <code>author</code></td>
+            <td>ISA person schema</td>
+            <td>JATS <code>&lt;contrib&gt;</code></td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td></td>
+            <td></td>
+            <td>address</td>
+            <td>address</td>
+          </tr>
+          <tr>
+            <td>affiliation</td>
+            <td>affiliation</td>
+            <td></td>
+            <td>affiliation</td>
+            <td>aff</td>
+          </tr>
+          <tr>
+            <td>emails</td>
+            <td></td>
+            <td></td>
+            <td>email</td>
+            <td>email</td>
+          </tr>
+          <tr>
+            <td>familyNames</td>
+            <td>surname</td>
+            <td>family</td>
+            <td>lastName</td>
+            <td>surname</td>
+          </tr>
+          <tr>
+            <td>funders</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>funding-source</td>
+          </tr>
+          <tr>
+            <td>givenNames</td>
+            <td>given_name</td>
+            <td>given</td>
+            <td>firstName, midInitials</td>
+            <td>given-names</td>
+          </tr>
+          <tr>
+            <td>honorificPrefix</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>prefix</td>
+          </tr>
+          <tr>
+            <td>honorificSuffix</td>
+            <td>suffix</td>
+            <td>suffix</td>
+            <td></td>
+            <td>suffix, degrees</td>
+          </tr>
+          <tr>
+            <td>jobTitle</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>custom-meta</td>
+          </tr>
+          <tr>
+            <td>memberOf</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>custom-meta</td>
+          </tr>
+          <tr>
+            <td>telephoneNumbers</td>
+            <td></td>
+            <td></td>
+            <td>phone, fax</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </body>
+
+</html>

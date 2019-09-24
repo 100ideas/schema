@@ -1,0 +1,73 @@
+{
+  "title": "Include",
+  "@id": "stencila:Include",
+  "category": "metadata",
+  "description": "A directive to include content from an external source (e.g. file, URL) or content.\n",
+  "role": "secondary",
+  "status": "experimental",
+  "extends": "Entity",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "Include"
+      ],
+      "default": "Include",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "source": {
+      "@id": "stencila:source",
+      "description": "The source of the content.",
+      "type": "string",
+      "from": "Include"
+    },
+    "mediaType": {
+      "@id": "stencila:mediaType",
+      "description": "The media type of the source content.",
+      "type": "string",
+      "from": "Include"
+    },
+    "hash": {
+      "@id": "stencila:hash",
+      "description": "A SHA256 hash of the source content and media type the last time that the source was decoded.",
+      "type": "string",
+      "from": "Include"
+    },
+    "content": {
+      "@id": "stencila:content",
+      "description": "The content to be included.",
+      "type": "array",
+      "items": {
+        "$ref": "Node.schema.json"
+      },
+      "from": "Include"
+    }
+  },
+  "required": [
+    "type",
+    "source"
+  ],
+  "file": "Include.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/Include.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/Include.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "propertyAliases": {}
+}

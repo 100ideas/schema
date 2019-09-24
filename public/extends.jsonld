@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:extends",
+  "@type": "schema:Property",
+  "schema:name": "extends",
+  "schema:description": "Other environments that this environment extends by adding or removing packages.,",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Environment"
+    },
+    {
+      "@id": "stencila:Parameter"
+    }
+  ]
+}

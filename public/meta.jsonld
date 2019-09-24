@@ -1,0 +1,204 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:meta",
+  "@type": "schema:Property",
+  "schema:name": "meta",
+  "schema:description": "Metadata associated with this item.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:ArraySchema"
+    },
+    {
+      "@id": "schema:Article"
+    },
+    {
+      "@id": "schema:AudioObject"
+    },
+    {
+      "@id": "stencila:BooleanSchema"
+    },
+    {
+      "@id": "schema:Brand"
+    },
+    {
+      "@id": "stencila:Cite"
+    },
+    {
+      "@id": "stencila:CiteGroup"
+    },
+    {
+      "@id": "stencila:Code"
+    },
+    {
+      "@id": "stencila:CodeBlock"
+    },
+    {
+      "@id": "stencila:CodeChunk"
+    },
+    {
+      "@id": "stencila:CodeError"
+    },
+    {
+      "@id": "stencila:CodeExpression"
+    },
+    {
+      "@id": "stencila:CodeFragment"
+    },
+    {
+      "@id": "schema:Collection"
+    },
+    {
+      "@id": "stencila:ConstantSchema"
+    },
+    {
+      "@id": "schema:ContactPoint"
+    },
+    {
+      "@id": "schema:CreativeWork"
+    },
+    {
+      "@id": "stencila:Datatable"
+    },
+    {
+      "@id": "stencila:DatatableColumn"
+    },
+    {
+      "@id": "schema:Date"
+    },
+    {
+      "@id": "stencila:Delete"
+    },
+    {
+      "@id": "stencila:Emphasis"
+    },
+    {
+      "@id": "stencila:Entity"
+    },
+    {
+      "@id": "stencila:EnumSchema"
+    },
+    {
+      "@id": "stencila:Environment"
+    },
+    {
+      "@id": "stencila:Figure"
+    },
+    {
+      "@id": "stencila:Function"
+    },
+    {
+      "@id": "stencila:Heading"
+    },
+    {
+      "@id": "schema:ImageObject"
+    },
+    {
+      "@id": "stencila:Include"
+    },
+    {
+      "@id": "stencila:IntegerSchema"
+    },
+    {
+      "@id": "stencila:Link"
+    },
+    {
+      "@id": "schema:ItemList"
+    },
+    {
+      "@id": "schema:ListItem"
+    },
+    {
+      "@id": "stencila:Mark"
+    },
+    {
+      "@id": "schema:MediaObject"
+    },
+    {
+      "@id": "stencila:Mount"
+    },
+    {
+      "@id": "stencila:NumberSchema"
+    },
+    {
+      "@id": "schema:Organization"
+    },
+    {
+      "@id": "stencila:Paragraph"
+    },
+    {
+      "@id": "stencila:Parameter"
+    },
+    {
+      "@id": "schema:Periodical"
+    },
+    {
+      "@id": "schema:Person"
+    },
+    {
+      "@id": "schema:Product"
+    },
+    {
+      "@id": "schema:PublicationIssue"
+    },
+    {
+      "@id": "schema:PublicationVolume"
+    },
+    {
+      "@id": "stencila:Quote"
+    },
+    {
+      "@id": "stencila:QuoteBlock"
+    },
+    {
+      "@id": "stencila:ResourceParameters"
+    },
+    {
+      "@id": "schema:SoftwareApplication"
+    },
+    {
+      "@id": "stencila:SoftwareSession"
+    },
+    {
+      "@id": "schema:SoftwareSourceCode"
+    },
+    {
+      "@id": "stencila:StringSchema"
+    },
+    {
+      "@id": "stencila:Strong"
+    },
+    {
+      "@id": "stencila:Subscript"
+    },
+    {
+      "@id": "stencila:Superscript"
+    },
+    {
+      "@id": "schema:Table"
+    },
+    {
+      "@id": "stencila:TableCell"
+    },
+    {
+      "@id": "stencila:TableRow"
+    },
+    {
+      "@id": "stencila:ThematicBreak"
+    },
+    {
+      "@id": "schema:Thing"
+    },
+    {
+      "@id": "stencila:TupleSchema"
+    },
+    {
+      "@id": "stencila:Variable"
+    },
+    {
+      "@id": "schema:VideoObject"
+    }
+  ]
+}

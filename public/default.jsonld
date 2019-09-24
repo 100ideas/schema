@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:value",
+  "@type": "schema:Property",
+  "schema:name": "default",
+  "schema:description": "The default value of the parameter.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Parameter"
+    },
+    {
+      "@id": "stencila:Variable"
+    }
+  ]
+}

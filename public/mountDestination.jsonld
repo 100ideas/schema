@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:mountDestination",
+  "@type": "schema:Property",
+  "schema:name": "mountDestination",
+  "schema:description": "The mount location inside the container.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Mount"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:SoftwareSession",
+  "@type": "schema:Class",
+  "schema:name": "SoftwareSession",
+  "schema:description": "Represents a runtime session with the resources and image that\nis required by software to execute.\n"
+}

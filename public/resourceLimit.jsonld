@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:resourceLimit",
+  "@type": "schema:Property",
+  "schema:name": "resourceLimit",
+  "schema:description": "The maximum amount of the resource that can be used.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:ResourceParameters"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "title": "TupleSchema",
+  "@id": "stencila:TupleSchema",
+  "extends": "Entity",
+  "role": "validation",
+  "status": "unstable",
+  "category": "data",
+  "description": "A schema specifying constraints on an array of heterogeneous items.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "TupleSchema"
+      ],
+      "default": "TupleSchema",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "items": {
+      "@id": "schema:itemListElement",
+      "description": "An array of schemas specifying the constraints on each successive item in the array.",
+      "type": "array",
+      "items": {
+        "$ref": "SchemaTypes.schema.json"
+      },
+      "from": "TupleSchema",
+      "aliases": [
+        "item"
+      ]
+    }
+  },
+  "file": "TupleSchema.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/TupleSchema.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/TupleSchema.schema.yaml",
+  "type": "object",
+  "propertyAliases": {
+    "item": "items"
+  },
+  "additionalProperties": false,
+  "required": [
+    "type"
+  ]
+}

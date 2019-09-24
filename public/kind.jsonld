@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:errorKind",
+  "@type": "schema:Property",
+  "schema:name": "kind",
+  "schema:description": "The type of error.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:CodeError"
+    }
+  ]
+}

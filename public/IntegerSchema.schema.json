@@ -1,0 +1,82 @@
+{
+  "title": "IntegerSchema",
+  "@id": "stencila:IntegerSchema",
+  "extends": "NumberSchema",
+  "role": "validation",
+  "status": "unstable",
+  "category": "data",
+  "description": "A schema specifying the constraints on an integer node.",
+  "$comment": "A node will be valid against the schema if it is a number with no\nfractional part and meets any additional constraints, such as `multipleOf`,\nspecified in the schema.\nAnalogous to the JSON Schema `integer` type.\n",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "IntegerSchema"
+      ],
+      "default": "IntegerSchema",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "minimum": {
+      "@id": "stencila:minimum",
+      "type": "number",
+      "description": "The inclusive lower limit for a numeric node.",
+      "$comment": "A number is valid against the schema if it is greater than,\nor exactly equal to, `minimum`.\n",
+      "from": "NumberSchema"
+    },
+    "exclusiveMinimum": {
+      "@id": "stencila:exclusiveMinimum",
+      "type": "number",
+      "description": "The exclusive lower limit for a numeric node.",
+      "$comment": "A number is valid against the schema only if it has a value greater\nthan (not equal to) `exclusiveMinimum`.\n",
+      "from": "NumberSchema"
+    },
+    "maximum": {
+      "@id": "stencila:maximum",
+      "type": "number",
+      "description": "The inclusive upper limit for a numeric node.",
+      "$comment": "A number is valid against the schema if it is less than,\nor exactly equal to, `maximum`.\n",
+      "from": "NumberSchema"
+    },
+    "exclusiveMaximum": {
+      "@id": "stencila:exclusiveMaximum",
+      "type": "number",
+      "description": "The exclusive upper limit for a numeric node.",
+      "$comment": "A number is valid against the schema only if it has a value less\nthan (not equal to) `exclusiveMaximum`.\n",
+      "from": "NumberSchema"
+    },
+    "multipleOf": {
+      "@id": "stencila:multipleOf",
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "A number that a numeric node must be a multiple of.",
+      "$comment": "A number is valid against the schema only if division by this value\nresults in an integer.\n",
+      "from": "NumberSchema"
+    }
+  },
+  "file": "IntegerSchema.schema.yaml",
+  "children": [],
+  "descendants": [],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/IntegerSchema.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/IntegerSchema.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type"
+  ],
+  "propertyAliases": {}
+}

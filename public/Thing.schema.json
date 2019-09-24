@@ -1,0 +1,150 @@
+{
+  "title": "Thing",
+  "@id": "schema:Thing",
+  "extends": "Entity",
+  "status": "unstable",
+  "category": "metadata",
+  "description": "The most generic type of item.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "Thing",
+        "Article",
+        "AudioObject",
+        "Brand",
+        "Collection",
+        "ContactPoint",
+        "CreativeWork",
+        "Datatable",
+        "DatatableColumn",
+        "Environment",
+        "Figure",
+        "ImageObject",
+        "MediaObject",
+        "Mount",
+        "Organization",
+        "Periodical",
+        "Person",
+        "Product",
+        "PublicationIssue",
+        "PublicationVolume",
+        "ResourceParameters",
+        "SoftwareApplication",
+        "SoftwareSession",
+        "SoftwareSourceCode",
+        "Table",
+        "VideoObject"
+      ],
+      "default": "Thing",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "alternateNames": {
+      "@id": "schema:alternateName",
+      "description": "Alternate names (aliases) for the item.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "from": "Thing",
+      "aliases": [
+        "alternateName"
+      ]
+    },
+    "description": {
+      "@id": "schema:description",
+      "description": "A description of the item.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Node.schema.json"
+          }
+        }
+      ],
+      "from": "Thing"
+    },
+    "name": {
+      "@id": "schema:name",
+      "description": "The name of the item.",
+      "type": "string",
+      "from": "Thing"
+    },
+    "url": {
+      "@id": "schema:url",
+      "description": "The URL of the item.",
+      "type": "string",
+      "format": "uri",
+      "from": "Thing"
+    }
+  },
+  "file": "Thing.schema.yaml",
+  "children": [
+    "Brand",
+    "ContactPoint",
+    "CreativeWork",
+    "DatatableColumn",
+    "Environment",
+    "Mount",
+    "Organization",
+    "Person",
+    "Product",
+    "ResourceParameters",
+    "SoftwareSession"
+  ],
+  "descendants": [
+    "Article",
+    "AudioObject",
+    "Brand",
+    "Collection",
+    "ContactPoint",
+    "CreativeWork",
+    "Datatable",
+    "DatatableColumn",
+    "Environment",
+    "Figure",
+    "ImageObject",
+    "MediaObject",
+    "Mount",
+    "Organization",
+    "Periodical",
+    "Person",
+    "Product",
+    "PublicationIssue",
+    "PublicationVolume",
+    "ResourceParameters",
+    "SoftwareApplication",
+    "SoftwareSession",
+    "SoftwareSourceCode",
+    "Table",
+    "VideoObject"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/Thing.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/Thing.schema.yaml",
+  "type": "object",
+  "propertyAliases": {
+    "alternateName": "alternateNames"
+  },
+  "additionalProperties": false,
+  "required": [
+    "type"
+  ]
+}

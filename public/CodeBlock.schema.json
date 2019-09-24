@@ -1,0 +1,63 @@
+{
+  "title": "CodeBlock",
+  "@id": "stencila:CodeBlock",
+  "extends": "Code",
+  "role": "secondary",
+  "status": "stable",
+  "category": "code",
+  "description": "A code block.",
+  "properties": {
+    "type": {
+      "@id": "schema:type",
+      "description": "The name of the type and all descendant types.",
+      "type": "string",
+      "enum": [
+        "CodeBlock",
+        "CodeChunk"
+      ],
+      "default": "CodeBlock",
+      "from": "Entity"
+    },
+    "id": {
+      "@id": "schema:id",
+      "description": "The identifier for this item.",
+      "type": "string",
+      "from": "Entity"
+    },
+    "meta": {
+      "@id": "stencila:meta",
+      "description": "Metadata associated with this item.",
+      "type": "object",
+      "from": "Entity"
+    },
+    "programmingLanguage": {
+      "@id": "schema:programmingLanguage",
+      "description": "The programming language of the code.",
+      "type": "string",
+      "from": "Code"
+    },
+    "text": {
+      "@id": "schema:text",
+      "description": "The text of the code.",
+      "type": "string",
+      "from": "Code"
+    }
+  },
+  "file": "CodeBlock.schema.yaml",
+  "children": [
+    "CodeChunk"
+  ],
+  "descendants": [
+    "CodeChunk"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stencila.github.com/schema/CodeBlock.schema.json",
+  "source": "https://github.com/stencila/schema/blob/master/schema/CodeBlock.schema.yaml",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "text"
+  ],
+  "propertyAliases": {}
+}

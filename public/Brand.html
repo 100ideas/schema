@@ -1,0 +1,117 @@
+<html>
+
+  <head>
+    <title>Brand</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Brand</h1>
+      <h2 id="status-unstable-role-tertiary">Status: unstable, Role: tertiary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>A brand used by an organization or person for labeling a product, product group, or
+            similar. </p>
+          <h2 id="properties-1">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>name <em>(required)</em></strong></td>
+                <td><code>string</code></td>
+                <td>The name of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>Brand</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>alternateNames</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Alternate names (aliases) for the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td><code>string</code> | <code>array&lt;</code>​<a
+                    href="./Node.html"><code>Node</code></a>​<code>&gt;</code></td>
+                <td>A description of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>logo</td>
+                <td><code>string&lt;uri&gt;</code> | <a
+                    href="./ImageObject.html"><code>ImageObject</code></a></td>
+                <td>A logo associated with the brand.</td>
+                <td><a href="./Brand.html">Brand</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>reviews</td>
+                <td><code>array&lt;</code>​<code>string</code>​<code>&gt;</code></td>
+                <td>Reviews of the brand.</td>
+                <td><a href="./Brand.html">Brand</a></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td><code>string&lt;uri&gt;</code></td>
+                <td>The URL of the item.</td>
+                <td><a href="./Thing.html">Thing</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>The <code>Brand</code> type allows you to provide details about a brand such as its logo
+        and reviews. This type of often used to describe the <code>brand</code> of a <a
+          href="/Product"><code>Product</code></a>.</p>
+      <h1 id="examples-1">Examples</h1>
+      <p>This is a <code>Brand</code> with a logo and one review.</p>
+      <pre><code class="language-json">{
+  &quot;type&quot;: &quot;Brand&quot;,
+  &quot;name&quot;: &quot;XYZ&quot;,
+  &quot;logo&quot;: {
+    &quot;type&quot;: &quot;ImageObject&quot;,
+    &quot;url&quot;: &quot;https://example.com/xyz.png&quot;,
+    &quot;caption&quot;: &quot;Logo of Brand YXZ&quot;
+  },
+  &quot;reviews&quot;: [&quot;Rather average product. Not sure if would use again&quot;]
+}</code></pre>
+      <h2 id="examples-2">Examples</h2>
+      <h5 id="auto-included-from-quotexamplesbrandbrandyamlquot">(auto-included from
+        &quot;examples/Brand/*.Brand.yaml&quot;)</h5>
+      <pre><code class="language-yaml">type: Brand
+logo: https://stenci.la/img/icons/stencil-machine.svg
+reviews:
+  - &#39;Awful. Broke my computer and research.&#39;
+</code></pre>
+    </article>
+  </body>
+
+</html>

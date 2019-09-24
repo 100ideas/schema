@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:Entity",
+  "@type": "schema:Class",
+  "schema:name": "Entity",
+  "schema:description": "The most basic item, defining the minimum properties required."
+}

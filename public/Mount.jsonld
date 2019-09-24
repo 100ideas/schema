@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:Mount",
+  "@type": "schema:Class",
+  "schema:name": "Mount",
+  "schema:description": "Describes a volume mount from a host to container.\n"
+}

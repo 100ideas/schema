@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:environment",
+  "@type": "schema:Property",
+  "schema:name": "environment",
+  "schema:description": "The computational environment in which the document should be executed.\n",
+  "schema:domainIncludes": [
+    {
+      "@id": "schema:Article"
+    },
+    {
+      "@id": "stencila:SoftwareSession"
+    }
+  ]
+}

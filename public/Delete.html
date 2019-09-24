@@ -1,0 +1,165 @@
+<html>
+
+  <head>
+    <title>Delete</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/styles.css"
+      rel="stylesheet">
+    <script src="https://unpkg.com/@stencila/thema@1.5.1/dist/themes/stencila/index.js"
+      type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.esm.js"
+      type="module"></script>
+    <script
+      src="https://unpkg.com/@stencila/components@&lt;=1/dist/stencila-components/stencila-components.js"
+      type="text/javascript"></script>
+  </head>
+
+  <body>
+    <article itemtype="https://schema.org/Article" itemscope="true">
+      <h1 itemprop="headline">Delete</h1>
+      <h2 id="status-stable-role-secondary">Status: stable, Role: secondary</h2>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>Content that is marked for deletion</p>
+          <h2 id="properties-2">Properties</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>content <em>(required)</em></strong></td>
+                <td><code>array&lt;</code>​<a
+                    href="./InlineContent.html"><code>InlineContent</code></a>​<code>&gt;</code>
+                </td>
+                <td>The content that is marked.</td>
+                <td><a href="./Mark.html">Mark</a></td>
+              </tr>
+              <tr>
+                <td><strong>type <em>(required)</em></strong></td>
+                <td><code>enum&lt;</code>​<code>Delete</code>​<code>&gt;</code></td>
+                <td>The name of the type and all descendant types.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td><code>string</code></td>
+                <td>The identifier for this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+              <tr>
+                <td>meta</td>
+                <td><code>object</code></td>
+                <td>Metadata associated with this item.</td>
+                <td><a href="./Entity.html">Entity</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h1 id="examples-4">Examples</h1>
+      <p>To illustrate how <code>Delete</code> nodes are encoded in alternative formats, we&#39;ll
+        use the following example, in context, within a <code>Paragraph</code>:</p>
+      <pre data-import="ex1"><code class="language-json">{
+  &quot;type&quot;: &quot;Paragraph&quot;,
+  &quot;content&quot;: [
+    &quot;The following is &quot;,
+    {
+      &quot;type&quot;: &quot;Delete&quot;,
+      &quot;content&quot;: [&quot;marked for deletion&quot;]
+    },
+    &quot;.&quot;
+  ]
+}</code></pre>
+      <h1 id="encodings-2">Encodings</h1>
+      <div itemtype="https://schema.stenci.la/Include">
+        <div itemprop="content">
+          <p>This section describes common encodings for this node type. These samples are generated
+            from the above examples by <a href="https://stencila.github.io/encoda">Encoda</a>, but
+            you can also author them in each format.</p>
+        </div>
+      </div>
+      <h2 id="markdown">Markdown</h2>
+      <p>Most Markdown parsers support the use of tildes (<code>~</code>) to mark content for
+        deletion. For example, MDAST also has a <a
+          href="https://github.com/syntax-tree/mdast#delete"><code>Delete</code></a> node type,
+        which renders the above example like this:</p>
+      <pre
+        data-export="ex1"><code class="language-md">The following is ~~marked for deletion~~.</code></pre>
+      <h2 id="html-1">HTML</h2>
+      <p>HTML natively supports <code>Delete</code> nodes with the <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del"><code>&lt;del&gt;</code></a>
+        element.</p>
+      <pre
+        data-export="ex1"><code class="language-html">&lt;p&gt;The following is &lt;del&gt;marked for deletion&lt;/del&gt;.&lt;/p&gt;</code></pre>
+      <h2 id="jats-2">JATS</h2>
+      <p>In JATS, <code>Delete</code> nodes are encoded as <a
+          href="https://jats.nlm.nih.gov/archiving/tag-library/1.2/element/strike.html"><code>&lt;strike&gt;</code></a>
+        elements.</p>
+      <pre data-export="ex1" data-to="jats"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;!DOCTYPE article PUBLIC &quot;-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN&quot; &quot;JATS-archivearticle1.dtd&quot;&gt;
+&lt;article xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; article-type=&quot;research-article&quot;&gt;
+    &lt;front&gt;
+        &lt;title-group&gt;
+            &lt;article-title/&gt;
+        &lt;/title-group&gt;
+        &lt;contrib-group/&gt;
+    &lt;/front&gt;
+    &lt;body&gt;
+        &lt;sec&gt;The following is .&lt;/sec&gt;
+    &lt;/body&gt;
+    &lt;back&gt;
+        &lt;ref-list&gt;
+            &lt;title&gt;References&lt;/title&gt;
+        &lt;/ref-list&gt;
+    &lt;/back&gt;
+&lt;/article&gt;</code></pre>
+      <h2 id="microsoft-word">Microsoft Word</h2>
+      <p><code>Delete</code> nodes are supported in Microsoft Word files. This <a
+          href="delete-ex1.out.docx" data-export="ex1"><code>docx</code></a> file was generated from
+        the above example.</p>
+      <h2 id="open-document-text">Open Document Text</h2>
+      <p><code>Delete</code> nodes are supported in Open Document Text files. This <a
+          href="delete-ex1.out.odt" data-export="ex1"><code>odt</code></a> file was generated from
+        the above example.</p>
+      <h2 id="pandoc-1">Pandoc</h2>
+      <p>The equivalent of <code>Delete</code> in Pandoc is the <a
+          href="https://github.com/jgm/pandoc-types/blob/1.17.5.4/Text/Pandoc/Definition.hs#L258"><code>Strikeout</code></a>
+        element. The above example in Pandoc JSON:</p>
+      <pre data-export="ex1" data-to="pandoc"><code class="language-json">{
+  &quot;blocks&quot;: [
+    {
+      &quot;t&quot;: &quot;Para&quot;,
+      &quot;c&quot;: [
+        {
+          &quot;t&quot;: &quot;Str&quot;,
+          &quot;c&quot;: &quot;The following is &quot;
+        },
+        {
+          &quot;t&quot;: &quot;Strikeout&quot;,
+          &quot;c&quot;: [
+            {
+              &quot;t&quot;: &quot;Str&quot;,
+              &quot;c&quot;: &quot;marked for deletion&quot;
+            }
+          ]
+        },
+        {
+          &quot;t&quot;: &quot;Str&quot;,
+          &quot;c&quot;: &quot;.&quot;
+        }
+      ]
+    }
+  ],
+  &quot;pandoc-api-version&quot;: [
+    1,
+    17,
+    5,
+    4
+  ],
+  &quot;meta&quot;: {}
+}</code></pre>
+    </article>
+  </body>
+
+</html>

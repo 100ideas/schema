@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:scheme",
+  "@type": "schema:Property",
+  "schema:name": "scheme",
+  "schema:description": "The schema to use to validate data in the column.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:DatatableColumn"
+    },
+    {
+      "@id": "stencila:Parameter"
+    },
+    {
+      "@id": "stencila:Variable"
+    }
+  ]
+}

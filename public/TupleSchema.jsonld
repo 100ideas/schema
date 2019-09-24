@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:TupleSchema",
+  "@type": "schema:Class",
+  "schema:name": "TupleSchema",
+  "schema:description": "A schema specifying constraints on an array of heterogeneous items."
+}

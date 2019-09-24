@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "stencila": "http://schema.stenci.la/"
+  },
+  "@id": "stencila:mediaType",
+  "@type": "schema:Property",
+  "schema:name": "mediaType",
+  "schema:description": "The media type of the source content.",
+  "schema:domainIncludes": [
+    {
+      "@id": "stencila:Include"
+    }
+  ]
+}
